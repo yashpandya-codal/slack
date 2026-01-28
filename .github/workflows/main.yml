@@ -22,3 +22,4 @@ jobs:
         SLACK_MESSAGE: 'Success : Stage Deployment Succeed'
         SLACK_TITLE: Deployment on Stage Site
         SLACK_WEBHOOK: https://webhook.site/c342111a-6691-461c-a9d4-567975845fde
+        SLACK_CUSTOM_PAYLOAD: '{"text": "Success : Stage Deployment Succeed!"}'
