@@ -1,0 +1,24 @@
+name: Slack Alert
+
+on:
+  push:
+    branches:
+      - main
+jobs:
+
+  build:
+    name: slack
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@master
+    - name: Slack Notification - Success
+      if: success()
+      uses: rtCamp/action-slack-notify@master
+      env:
+        SLACK_USERNAME: Stage Deployment Status
+        MSG_MINIMAL: 'true'
+        SLACK_ICON_EMOJI: ':rocket:'
+        SLACK_FOOTER: 'Driven by GitHub Actions'
+        SLACK_MESSAGE: 'Success : Stage Deployment Succeed'
+        SLACK_TITLE: Deployment on Stage Site
+        SLACK_WEBHOOK: https://webhook.site/c342111a-6691-461c-a9d4-567975845fde
